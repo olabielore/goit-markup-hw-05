@@ -607,7 +607,7 @@ input.subscribe-input::placeholder {
 
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -621,40 +621,55 @@ input.subscribe-input::placeholder {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 408px;
+    min-height: 584px;
     background-color: #fcfcfc;
-    padding: 24px;
     border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 72px 24px 24px 24px;
 }
 
 .modal-close-btn {
     position: absolute;
     top: 24px;
-    right: 24px;;
+    right: 24px;
     line-height: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 100%;
-    border: 1px solid #E7E9FC;
-    padding: 8px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     fill: #fff;
     background-color: #404BBF;
+    border: none;
+}
+
+.modal-close-btn-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-text {
     font-weight: 500;
     line-height: 1.5;
     color: #2E2F42;
-    margin-top: 48px;
     margin-bottom: 16px;
     text-align: center;
 }
 
 .review-form-wrapper {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    line-height: 0;
 }
 
 .form-icon-wrapper {
@@ -670,7 +685,7 @@ input.subscribe-input::placeholder {
     border-radius: 4px;
     background-color: transparent;
     padding-left: 38px;
-    outline: none;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -682,6 +697,7 @@ input.subscribe-input::placeholder {
 .form-name {
     display: block;
     font-size: 12px;
+    line-height: 1.17;
     line-height: 1.16667;
     letter-spacing: 0.04em;
     color: #8e8f99;
@@ -705,13 +721,14 @@ input.subscribe-input::placeholder {
     height: 120px;
     font-size: 12px;
     letter-spacing: 0.04em;
-    line-height: 1.16667;
+    line-height: 1.17;
+    color: rgba(46, 47, 66, 0.4);
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     background-color: transparent;
     resize: none;
     padding: 8px 16px;
-    outline: none;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -721,7 +738,7 @@ input.subscribe-input::placeholder {
 
 .review-policy-label {
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
@@ -742,6 +759,7 @@ input.subscribe-input::placeholder {
     cursor: pointer;
     fill: transparent;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-policy-checkbox:checked + .review-policy-label .review-policy-own {
@@ -755,6 +773,7 @@ input.subscribe-input::placeholder {
 } */
 
 .review-form-btn {
+    display: block;
     min-width: 169px;
     border: none;
     background-color: #4d5ae5;
