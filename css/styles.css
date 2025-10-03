@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+button {
+    cursor: pointer;
+}
 *,
 *::before,
 *::after {
@@ -251,6 +254,7 @@ img {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 48px;
 }
 
 /* ===== Benefits Section ===== */
@@ -513,4 +517,193 @@ img {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+/* ===== Backdrop with Modal ===== */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    background-color: #fcfcfc;
+    padding: 24px;
+    /* margin-right: 24px;
+    margin-bottom: 24px; */
+    border-radius: 4px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;;
+    line-height: 0;
+    border-radius: 100%;
+    border: 1px solid #E7E9FC;
+    padding: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    fill: #fff;
+    background-color: #404BBF;
+}
+
+.review-form-text {
+    font-weight: 500;
+    line-height: 1.5;
+    color: #2E2F42;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.review-form-wrapper {
+    margin-bottom: 8px;
+}
+
+.form-icon-wrapper {
+   position: relative;
+}
+
+.form-name-input {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-name-input:focus,
+.form-comment:focus {
+    border-color: #4D5AE5;
+}
+
+.form-name {
+    display: block;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+}
+
+.review-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-name-input:focus + .review-form-icon {
+    fill: #4D5AE5;
+} 
+
+.form-comment {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.16667;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    resize: none;
+    padding: 8px 16px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-form-checkbox{
+    margin-bottom: 24px;
+}
+
+.review-policy-label {
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.privacy-policy-link {
+    color: #4D5AE5;
+    text-decoration: underline;
+}
+
+.review-policy-own {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    cursor: pointer;
+    fill: transparent;
+    margin-right: 8px;
+}
+
+.review-policy-checkbox:checked + .review-policy-label .review-policy-own {
+    background-color: #404BBF;
+    border: #404BBF;
+    fill: #F4F4FD;
+}
+
+/* .review-policy-checkbox:focus + .review-policy-label .review-policy-own {
+    outline: 1px solid rgba(46, 47, 66, 0.4);
+} */
+
+.review-form-btn {
+    min-width: 169px;
+    border: none;
+    background-color: #4d5ae5;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #ffffff;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 95px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-form-btn:hover,
+.review-form-btn:focus {
+    background-color: #404BBF;
 }
