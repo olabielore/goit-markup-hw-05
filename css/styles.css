@@ -506,19 +506,6 @@ img {
     background-color: #31d0aa;
 }
 
-.footer-subscribe-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    margin-right: 24px;
-
-}
-
 .subscribe-input {
     border: 1px solid #ffffff;
     border-radius: 4px;
@@ -536,6 +523,13 @@ img {
 }
 
 .subscribe-input::placeholder {
+    color: #ffffff;
+}
+
+.footer-form-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
     color: #ffffff;
 }
 
@@ -568,9 +562,15 @@ img {
     background-color: #404BBF;
 }
 
+.footer-form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .footer-form {
     display: flex;
     align-items: flex-end;
+    gap: 24px;
 }
 
 .logo-footer-wrapper {
