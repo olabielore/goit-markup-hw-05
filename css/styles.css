@@ -640,7 +640,7 @@ input.subscribe-input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: #e7e9fc;
     border: 1px solid rgba(0, 0, 0, 0.1);
 
@@ -668,10 +668,13 @@ input.subscribe-input::placeholder {
 }
 
 .review-form-wrapper {
+    margin-bottom: 8px;
+}
+
+.review-form-wrapper-area {
     margin-bottom: 16px;
     line-height: 0;
 }
-
 .form-icon-wrapper {
    position: relative;
 }
@@ -698,7 +701,6 @@ input.subscribe-input::placeholder {
     display: block;
     font-size: 12px;
     line-height: 1.17;
-    line-height: 1.16667;
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
